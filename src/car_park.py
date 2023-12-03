@@ -1,3 +1,7 @@
+from sensor import Sensor
+from display import Display
+
+
 class CarPark:
     def __init__(self,
                  location,
@@ -13,3 +17,12 @@ class CarPark:
 
     def __str__(self):
         return f'Welcome to {self.location} car park'
+
+    def register(self, component):
+        if not isinstance(component, (Sensor, Display)):
+            raise TypeError("Invalid component type")
+
+        if isinstance(component, Sensor):
+            self.sensors.append(component)
+        elif isinstance(component, Display):
+            self.displays.append(component)
