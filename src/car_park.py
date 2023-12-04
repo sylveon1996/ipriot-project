@@ -1,11 +1,13 @@
 from sensor import Sensor
 from display import Display
+from pathlib import Path
 
 
 class CarPark:
     def __init__(self,
                  location,
                  capacity,
+                 log_file='log.txt',
                  plates=None,
                  sensors=None,
                  displays=None):
@@ -14,10 +16,13 @@ class CarPark:
         self.plates = plates or []
         self.sensors = sensors or []
         self.displays = displays or []
+        self.log_file = Path(log_file)
+        if not self.log_file.exists():
+            self.log_file.touch()
 
     @property
     def available_bays(self):
-        return self.capacity - len(self.plates)
+        return max(0, self.capacity - len(self.plates))
 
     def __str__(self):
         return f'Welcome to {self.location} car park'
