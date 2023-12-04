@@ -435,27 +435,24 @@ This time, we will push the tag to the remote repository:
    ```
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
-
-```markdown
-![Added methods to the car park class](images/methods-to-car-park.png)
-```
+![img_2.png](img_2.png)
 
 Answer the following questions:
 > **Review Questions**
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - _The number of available bays_  
->      `Answer here...`
+>      `The CarPark class because it contains plates and capacity parameter which can be used to make a method such as available_bays`
 >    - _The current temperature_  
->      `Answer here...`
+>      `Carpark with use of update_displays method `
 >    - _The time_  
->      `Answer here...`
+>      `CarPark with use of update_displays method`
 >
 > 2. **What is the difference between an attribute and a property?**  
->    `Answer here...`
+>    `Attributes is a data object. A method that has the property decorator can be assessed like a attribute.`
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**  
->    `Answer here...`
+>    `I think we used dictionary because of the ability to remove/add the keys and values easily. I think an advantage is that it is a simple and effective approach. I'm not sure about disadvantage, perhaps kwargs would have been a better approach`
 
 #### Add a detect vehicle method to the Sensor class
 
