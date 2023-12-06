@@ -20,6 +20,8 @@ class CarPark:
         if not self.log_file.exists():
             self.log_file.touch()
 
+    display = Display(car_park="CarPark123", id="2")
+
     @property
     def available_bays(self):
         return max(0, self.capacity - len(self.plates))
@@ -38,13 +40,14 @@ class CarPark:
 
     def add_car(self, plate):
         self.plates.append(plate)
+        self.update_displays()
 
     def remove_car(self, plate):
         self.plates.remove(plate)
+        self.update_displays()
 
-    def update_display(self):
+    def update_displays(self):
+        data = {"available_bays": 10, "temperature": 25}
         for display in self.displays:
-            display.update({"Bays": self.available_bays,
-                            "Temperature": 42,
-                            })
+            display.update(data)
             print(f"Updating: {display}")
