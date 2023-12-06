@@ -20,7 +20,6 @@ class CarPark:
         if not self.log_file.exists():
             self.log_file.touch()
 
-    display = Display(car_park="CarPark123", id="2")
 
     @property
     def available_bays(self):
