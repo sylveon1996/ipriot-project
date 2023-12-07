@@ -66,7 +66,7 @@ class CarPark:
         self._log_car("exited", plate)
 
     def update_displays(self):
-        data = {"available_bays": 10, "temperature": 25}
+        data = {"available_bays": self.available_bays, "temperature": 25}
         for display in self.displays:
             display.update(data)
             print(f"Updating: {display}")
